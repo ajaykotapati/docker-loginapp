@@ -14,4 +14,4 @@ after_success:
     #push after test
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-    - docker push softwarebhayya/loginapp
+    - docker push ajaykotapati23/loginapp

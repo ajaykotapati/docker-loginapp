@@ -2,13 +2,14 @@ sudo: required
 
 services:
     - docker
-before-install:
-    - docker build -t ajaykotapati23/loginapp .
+
+before_install:
+    - docker build -t softwarebhayya/loginapp .
+
 script:
-    - docker run ajaykotapati23/loginapp npm test
+    - docker run softwarebhayya/loginapp npm test
 
-after-success:
-    - echo '$DOCKER_PASSWORD' | docker login -u "$DOCKER_ID" --password-stdin
+after_success:
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-    #push image
-    -docker push ajaykotapati23/loginapp 
+    - docker push softwarebhayya/loginapp

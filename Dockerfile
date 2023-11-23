@@ -1,7 +1,7 @@
-#base image
+#base images
 FROM node:alpine
 
-#install dependancies
+#install dependancies required
 WORKDIR /usr/loginapp
 COPY ./package.json ./
 RUN npm install

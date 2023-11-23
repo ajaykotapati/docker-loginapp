@@ -1,0 +1,14 @@
+sude: required
+
+services:
+    - docker
+before-install:
+    - docker build -t ajaykotapati23/loginapp .
+script:
+    - docker run ajaykotapati23/loginapp npm test
+
+after-success:
+    - echo '$DOCKER_PASSWORD' | docker login -u "$DOCKER_ID" --password-stdin
+
+    #push image
+    -docker push ajaykotapati23/loginapp 

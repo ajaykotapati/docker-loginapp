@@ -7,6 +7,7 @@ before_install:
     - docker build -t softwarebhayya/loginapp .
 
 script:
+    #docker login
     - docker run softwarebhayya/loginapp npm test
 
 after_success:

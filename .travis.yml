@@ -4,11 +4,11 @@ services:
     - docker
 
 before_install:
-    - docker build -t softwarebhayya/loginapp .
+    - docker build -t ajaykotapati23/loginapp .
 
 script:
     #docker login
-    - docker run softwarebhayya/loginapp npm test
+    - docker run ajaykotapati23/loginapp npm test
 
 after_success:
     #push after test

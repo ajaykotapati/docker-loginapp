@@ -11,6 +11,7 @@ script:
     - docker run softwarebhayya/loginapp npm test
 
 after_success:
+    #push after test
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
     - docker push softwarebhayya/loginapp
